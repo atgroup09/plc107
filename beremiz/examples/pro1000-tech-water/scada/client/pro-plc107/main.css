@@ -1,0 +1,90 @@
+.ui-main-placeholder-loc {
+	width: 1069px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#DI0 {
+	left: 47px;
+	top: 33px;
+}
+
+#DI1 {
+	left: 78px;
+	top: 33px;
+}
+
+#DI2 {
+	left: 109px;
+	top: 33px;
+}
+
+#DI3 {
+	left: 140px;
+	top: 33px;
+}
+
+#DO0 {
+	left: 243px;
+	top: 33px;
+}
+
+#DO1 {
+	left: 275px;
+	top: 33px;
+}
+
+#DO2 {
+	left: 364px;
+	top: 33px;
+}
+
+#DO3 {
+	left: 453px;
+	top: 33px;
+}
+
+#App {
+	left: 743px;
+	top: 320px;
+}
+
+#AppBak {
+	left: 743px;
+	top: 320px;
+}
+
+#Run {
+	left: 813px;
+	top: 320px;
+}
+
+#RunBak {
+	left: 813px;
+	top: 320px;
+}
+
+#Pwr {
+	left: 880px;
+	top: 320px;
+}
+
+#AI0_Box {
+	left: 550px;
+	top: 20px;
+}
+
+#AO0_Box {
+	left: 648px;
+	top: 20px;
+}
+
+#HW_Box {
+	left: 890px;
+	top: 162px;
+}
+
+#RTE_Box {
+	left: 890px;
+	top: 216px;
+}

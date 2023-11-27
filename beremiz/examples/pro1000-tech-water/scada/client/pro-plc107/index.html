@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="AT09" />
+<meta name="copyright" content="&copy;AT09, 2022" />
+<meta name="contact" content="atgroup09@yandex.ru" />
+<meta name="description" content="Информационный портал, ПЛК107" />
+<meta name="keywords" content="Информационный портал, ПЛК107" />
+<meta name="resource-type" content="document" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- LIBRARIES -->
+<script type="text/javascript" src="../lib/js/regexp/regexp.js"></script>
+<script type="text/javascript" src="../lib/js/types/types.js"></script>
+<script type="text/javascript" src="../lib/js/screen/screen.js"></script>
+<script type="text/javascript" src="../lib/js/dom/dom.js"></script>
+<script type="text/javascript" src="../lib/js/bit.min.js"></script>
+<script type="text/javascript" src="../lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/js/date.format.min.js"></script>
+<script type="text/javascript" src="../lib/js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../lib/js/jquery-mobile/jquery.mobile.min.js"></script>
+
+<!-- MODULES -->
+<script type="text/javascript" src="../mod/debug.min.js"></script>
+<script type="text/javascript" src="../mod/log.min.js"></script>
+<script type="text/javascript" src="../mod/popup-dialog.min.js"></script>
+<script type="text/javascript" src="../mod/hmi-v2.min.js"></script>
+<script type="text/javascript" src="../mod/form-v2.min.js"></script>
+<script type="text/javascript" src="../mod/ui-hmi-v2.min.js"></script>
+<script type="text/javascript" src="res.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<!-- CSS-styles -->
+<style type="text/css">@import "../lib/js/jquery-mobile/fonts-googleapis-opensans.css";</style>
+<style type="text/css">@import "../lib/js/jquery-mobile/jquery.mobile.min.css";</style>
+<style type="text/css">@import "../lib/js/jquery-mobile/jqm-demos.css";</style>
+<style type="text/css">@import "../lib/js/jquery-ui/jquery-ui.min.css";</style>
+<style type="text/css">@import "../mod/ui-hmi-v2.min.css";</style>
+<style type="text/css">@import "main.css";</style>
+
+<title>ПЛК107</title>
+</head>
+
+<body>
+
+<!-- page -->
+<div data-role="page" data-theme="a" class="my-page">
+
+	<!-- header -->
+	<div data-role="header" data-position="fixed" data-theme="b" data-tap-toggle="false" >
+		<a href="#nav-panel-left" class="ui-btn ui-btn-icon-right ui-icon-bars ui-btn-icon-notext ui-corner-all" title="Меню">Меню</a>
+		<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+            <a href="#" class="ui-btn ui-btn-icon-right ui-icon-disconnected ui-btn-icon-notext ui-noactive" id="ConnectState">Связь</a>
+			<a href="#nav-panel-right" class="ui-btn ui-btn-icon-right ui-icon-eye ui-btn-icon-notext" title="Настройки">Настройки</a>
+        </div>
+        <h1>ПЛК107</h1>
+	</div>
+	<!-- /header -->
+
+	<!-- content -->
+	<div role="main" class="ui-content">
+		<div class="ui-bar ui-bar-a ui-corner-all ui-main-placeholder-loc">
+			<div id="RootCase" class="ui-grid-solo">
+				<div class="ui-bar ui-bar-a ui-bar-main">
+					<img src="images/main.png" />
+
+					<img id="DI0" log-res-target="DI0" log-res-msg="St" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="DI0" />
+					<img id="DI1" log-res-target="DI1" log-res-msg="St" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="DI1" />
+					<img id="DI2" log-res-target="DI2" log-res-msg="St" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="DI2" />
+					<img id="DI3" log-res-target="DI3" log-res-msg="St" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="DI3" />
+
+					<img id="DO0" log-res-target="DO0" log-res-msg="St" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="DO0" />
+					<img id="DO1" log-res-target="DO1" log-res-msg="St" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="DO1" />
+					<img id="DO2" log-res-target="DO2" log-res-msg="St" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="DO2" />
+					<img id="DO3" log-res-target="DO3" log-res-msg="St" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="DO3" />
+
+                    <img id="AppBak" log-res-target="AppBak" log-res-msg="St1" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="Работа пользовательской программы" />
+                    <img id="App" log-res-target="App" log-res-msg="St1" class="ui-abs-200" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="Работа пользовательской программы" />
+                    <img id="RunBak" class="ui-abs-100" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="Работа целевой системы и сети" />
+                    <img id="Run" log-res-target="Run" log-res-msg="St1" class="ui-abs-200" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="Работа целевой системы и сети" />
+                    <img id="Pwr" log-res-target="Pwr" log-res-msg="St2" class="ui-abs-200" src="images/bl-red.png" src0="images/bl-red.png" src1="images/bl-green.png" title="Наличие питания" />
+
+                    <div id="AI0_Box" class="ui-abs-100 ui-abs-bar-x">
+						<table class="ui-abs-table-x">
+							<caption />
+							<thead />
+							<tfoot />
+							<tbody>
+								<tr>
+									<th id="AI0">0.00</th>
+								</tr>
+								<tr>
+									<td>В</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div id="AO0_Box" class="ui-abs-100 ui-abs-bar-x">
+						<table class="ui-abs-table-x">
+							<caption />
+							<thead />
+							<tfoot />
+							<tbody>
+								<tr>
+									<th id="AO0">0.00</th>
+								</tr>
+								<tr>
+									<td>В</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div id="HW_Box" class="ui-abs-100 ui-abs-bar-x">
+						<table class="ui-abs-table-x">
+							<caption title="ПЛК">PLC</caption>
+							<thead />
+							<tfoot />
+							<tbody>
+								<tr>
+									<td id="HW_CODE" title="код ПЛК">0</td>
+									<td id="HW_VAR" title="вариант исполнения ПЛК">0</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div id="RTE_Box" class="ui-abs-100 ui-abs-bar-x">
+						<table class="ui-abs-table-x">
+							<caption title="Целевая система ПЛК">RTE</caption>
+							<thead />
+							<tfoot />
+							<tbody>
+								<tr>
+									<td id="RTE_VER" title="версия целевой системы">0</td>
+									<td id="RTE_YEAR" title="год выпуска целевой системы">0</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+			<div id="LogCase" class="ui-grid-solo">
+				<div class="ui-bar ui-bar-a">
+					<div class="ui-corner-all custom-corners">
+						<div class="ui-bar ui-bar-y">
+							<h3>Журнал событий</h3>
+						</div>
+						<div class="ui-body ui-body-a ui-main-log">
+							<table class="ui-table-z" id="LogTable">
+								<caption />
+								<thead />
+								<tfoot />
+								<tbody />
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /content -->
+
+	<!-- footer -->
+	<div data-role="footer" data-position="fixed" data-theme="b" data-tap-toggle="false">
+		<a href="../index.html" target="_top" rel="external" data-icon="carat-l" data-iconpos="notext" title="Назад к Главному меню">Back</a>
+	</div>
+	<!-- /footer -->
+
+	<!-- nav-panel::left -->
+	<div id="nav-panel-left" data-role="panel" data-position-fixed="true" data-display="push" data-theme="b">
+		<ul data-role="listview" data-inset="true" data-divider-theme="a">
+			<li data-role="list-divider">Подробно</li>
+			<li data-role="list-divider" data-theme="b">котельная</li>
+		</ul>
+		<ul data-role="listview" data-inset="true" data-divider-theme="a">
+			<li data-role="list-divider">Назад к экрану</li>
+			<li><a href="../index.html" target="_top" rel="external">Главное меню</a></li>
+		</ul>
+	</div>
+	<!-- /nav-panel::left -->
+
+	<!-- nav-panel::right -->
+	<div id="nav-panel-right" data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a">
+		<form id="FormSet">
+			<ul data-role="listview" data-inset="true">
+				<li data-role="list-divider">Cервер</li>
+				<li id="WsServerID">---</li>
+				<li id="WsServerUri">---</li>
+				<li id="WsServerState">---</li>
+				<li class="ui-field-contain">
+					<a href="#" id="FormSetConnect" class="ui-btn ui-btn-icon-left ui-icon-disconnected" data-mini="true" title="подключить">подключить</a>
+				</li>
+			</ul>
+			<br />
+			<ul data-role="listview" data-inset="true">
+				<li data-role="list-divider">Вид</li>
+				<li>
+					<label for="FormSetLog">журнал событий</label>
+					<input type="checkbox" name="log_use" id="FormSetLog" data-mini="true" value="1" checked="true" />
+				</li>
+			</ul>
+		</form>
+	</div>
+	<!-- /nav-panel::right -->
+
+	<!-- popup widgets -->
+	<div data-role="popup" id="PopupBasic" data-position-to="window" data-overlay-theme="a" data-theme="b" class="ui-content" style="max-width:640px;">
+	</div>
+	<!-- /popup widgets -->
+
+</div>
+<!-- /page -->
+
+
+<!-- JAVASCRIPT CODE -->
+
+<script language="JavaScript">
+
+//** GLOBAL VARIABLES
+
+
+//** FUNCTIONS
+
+function main()
+{
+	Main_InitUI();
+}
+
+$(document).ready(main);
+
+</script>
+
+</body>
+</html>

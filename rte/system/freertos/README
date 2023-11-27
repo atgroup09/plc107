@@ -1,0 +1,16 @@
+FreeRTOSv10.3.1
+
+1. Copy base sources:
+   FreeRTOS/Source/include > project/system/freertos
+   FreeRTOS/Source/*.c     > project/system/freertos
+
+2. Copy portable sources (for GCC and ARM CM3):
+   FreeRTOS/Source/portable/GCC/ARM_CM3/port.c > project/system/freertos
+   FreeRTOS/Source/portable/GCC/ARM_CM3/port.h > project/system/freertos
+
+3. Copy memory managers:
+   FreeRTOS/Source/portable/MemMang/heap_?.c > project/system/freertos
+
+4. Copy configuration template:
+   FreeRTOS/Demo/CORTEX_STM32F103_Keil/FreeRTOSConfig.h > project/include
+   

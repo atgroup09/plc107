@@ -1,0 +1,93 @@
+.ui-main-placeholder-loc {
+	width: 1069px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#LT1 {
+	left: 238px;
+	top: 157px;
+}
+
+#LT1w {
+	left: 234px;
+	top: 438px;
+    display: none;
+}
+
+#LT2 {
+	left: 305px;
+	top: 157px;
+}
+
+#LT2w {
+	left: 234px;
+	top: 363px;
+	display: none;
+}
+
+#LT3 {
+	left: 370px;
+	top: 157px;
+}
+
+#LT3w {
+	left: 234px;
+	top: 287px;
+	display: none;
+}
+
+#P1 {
+	left: 740px;
+	top: 416px;
+}
+
+#P1_Box {
+	left: 757px;
+	top: 288px;
+}
+
+#P1w {
+	left: 614px;
+	top: 254px;
+	display: none;
+}
+
+#HS1_Box {
+	left: 924px;
+	top: 288px;
+}
+
+#LTSet_Box {
+	left: 269px;
+	top: 35px;
+}
+
+#LTSet0 {
+	left: 228px;
+	top: 435px;
+	display: none;
+}
+
+#LTSet1 {
+	left: 228px;
+	top: 361px;
+	display: none;
+}
+
+#LTErr_Box {
+	left: 435px;
+	top: 35px;
+}
+
+#LTErr0 {
+	left: 452px;
+	top: 56px;
+	display: none;
+}
+
+#PLC_Box {
+	left: 532px;
+	top: 35px;
+}
+

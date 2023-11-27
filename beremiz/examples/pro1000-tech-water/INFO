@@ -1,0 +1,26 @@
+pro1000-tech-water
+=======================================
+example project
+
+
+Hardware platform:
++ PLC107
+
+
+Software:
+
+
+addons:
+
+
+Directories & Files:
+
+    demo - screenshots and video
+
+    other-tools - debug tools (ModBus Emulator project, Owen OPC project)
+
+    plc - project of control program for IDE Beremiz YAPLC (bin + source code)
+
+    scada - data server & project of web-scada (bin + source code)
+
+    spec - specifications & documentation (plc107, pro1000, wslogger, wsscada)

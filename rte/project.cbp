@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="project" />
+		<Option pch_mode="2" />
+		<Option compiler="arm-elf-gcc" />
+		<MakeCommands>
+			<Build command="" />
+			<CompileFile command="" />
+			<Clean command="" />
+			<DistClean command="" />
+			<AskRebuildNeeded command="" />
+			<SilentBuild command=" &gt; $(CMD_NULL)" />
+		</MakeCommands>
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/project.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="arm-elf-gcc" />
+				<Compiler>
+					<Add option="-Os" />
+					<Add option="-g" />
+					<Add option="-Og" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/project.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="arm-elf-gcc" />
+				<Compiler>
+					<Add option="-Os" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-mcpu=cortex-m3" />
+			<Add option="-mthumb" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-std=gnu11" />
+			<Add option="-fmessage-length=0" />
+			<Add option="-fsigned-char" />
+			<Add option="-ffreestanding" />
+			<Add option="-fno-builtin" />
+			<Add option="-fno-strict-aliasing" />
+			<Add option="-ffunction-sections" />
+			<Add option="-fdata-sections" />
+			<Add option="-Wno-misleading-indentation" />
+			<Add option="-DDEBUG" />
+			<Add option="-DUSE_FULL_ASSERT" />
+			<Add option="-DSTM32F10X_CL" />
+			<Add option="-DUSE_STDPERIPH_DRIVER" />
+			<Add option="-DHSE_VALUE=25000000" />
+			<Add directory="system/stm32f1/include" />
+			<Add directory="system/stm32f1/include/cmsis" />
+			<Add directory="system/stm32f1/include/stm32f1-stdperiph" />
+			<Add directory="system/freertos/include" />
+			<Add directory="system/matiec" />
+			<Add directory="system/beremiz/include" />
+			<Add directory="include" />
+			<Add directory="include/stm32f1" />
+			<Add directory="include/freertos" />
+			<Add directory="include/beremiz" />
+		</Compiler>
+		<Linker>
+			<Add option="-mthumb" />
+			<Add option="-mcpu=cortex-m3" />
+			<Add option="-nostartfiles" />
+			<Add option="-Xlinker" />
+			<Add option='-Map=&quot;${TARGET_OUTPUT_FILE}&quot;.map' />
+			<Add option="-Wl,--gc-sections,-lgcc" />
+			<Add option='-T &quot;target-rte.ld&quot;' />
+			<Add directory="ldscripts/stm32f1" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="arm-none-eabi-size ${TARGET_OUTPUT_FILE}" />
+			<Add after="arm-none-eabi-objcopy -O ihex ${TARGET_OUTPUT_FILE} ${TARGET_OUTPUT_FILE}.hex" />
+			<Add after="arm-none-eabi-objcopy -O binary ${TARGET_OUTPUT_FILE} ${TARGET_OUTPUT_FILE}.bin" />
+			<Mode after="always" />
+		</ExtraCommands>
+		<Unit filename="include/beremiz/app-di.h" />
+		<Unit filename="include/beremiz/app-do.h" />
+		<Unit filename="include/beremiz/app-sys.h" />
+		<Unit filename="include/beremiz/app.h" />
+		<Unit filename="include/bit.h" />
+		<Unit filename="include/freertos/rtos-error.h" />
+		<Unit filename="include/freertos/rtos-task-app.h" />
+		<Unit filename="include/freertos/rtos-task-data.h" />
+		<Unit filename="include/freertos/rtos-task-di.h" />
+		<Unit filename="include/freertos/rtos-task-do.h" />
+		<Unit filename="include/freertos/rtos-task-log.h" />
+		<Unit filename="include/freertos/rtos-task-mbrtu.h" />
+		<Unit filename="include/freertos/rtos-tim-app.h" />
+		<Unit filename="include/freertos/rtos.h" />
+		<Unit filename="include/mbrtu.h" />
+		<Unit filename="include/reg-base.h" />
+		<Unit filename="include/reg-map.h" />
+		<Unit filename="include/reg.h" />
+		<Unit filename="include/scale.h" />
+		<Unit filename="include/stm32f1/FreeRTOSConfig.h" />
+		<Unit filename="include/stm32f1/config.h" />
+		<Unit filename="include/stm32f1/di.h" />
+		<Unit filename="include/stm32f1/do.h" />
+		<Unit filename="include/stm32f1/soft-reset.h" />
+		<Unit filename="include/stm32f1/stm32f10x_conf.h" />
+		<Unit filename="include/stm32f1/swd-debug.h" />
+		<Unit filename="include/stm32f1/sysclock.h" />
+		<Unit filename="include/stm32f1/systick.h" />
+		<Unit filename="include/stm32f1/tim2.h" />
+		<Unit filename="include/stm32f1/tim3.h" />
+		<Unit filename="include/stm32f1/usart.h" />
+		<Unit filename="include/stm32f1/usart1.h" />
+		<Unit filename="include/stm32f1/usart2.h" />
+		<Unit filename="include/stm32f1/usart3.h" />
+		<Unit filename="include/type.h" />
+		<Unit filename="include/xprintf.h" />
+		<Unit filename="ldscripts/stm32f1/target-rte.ld" />
+		<Unit filename="src/beremiz/app-di.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/beremiz/app-do.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/beremiz/app-sys.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/beremiz/app.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos-error.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos-task-app.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos-task-data.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos-task-di.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos-task-do.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos-task-log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos-task-mbrtu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos-tim-app.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/freertos/rtos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/mbrtu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/reg-base.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/reg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/scale.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/di.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/do.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/soft-reset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/swd-debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/sysclock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/systick.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/tim2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/tim3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/usart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/usart1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/usart2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32f1/usart3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/type.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/xprintf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/beremiz/include/plc_abi.h" />
+		<Unit filename="system/beremiz/include/plc_app.h" />
+		<Unit filename="system/beremiz/include/plc_backup.h" />
+		<Unit filename="system/beremiz/include/plc_debug.h" />
+		<Unit filename="system/beremiz/include/plc_glue_rte.h" />
+		<Unit filename="system/beremiz/include/plc_rtc.h" />
+		<Unit filename="system/beremiz/include/plc_tick.h" />
+		<Unit filename="system/beremiz/src/plc_app.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/beremiz/src/plc_backup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/beremiz/src/plc_debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/beremiz/src/plc_glue_rte.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/beremiz/src/plc_rtc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/beremiz/src/plc_tick.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/include/FreeRTOS.h" />
+		<Unit filename="system/freertos/include/StackMacros.h" />
+		<Unit filename="system/freertos/include/atomic.h" />
+		<Unit filename="system/freertos/include/croutine.h" />
+		<Unit filename="system/freertos/include/deprecated_definitions.h" />
+		<Unit filename="system/freertos/include/event_groups.h" />
+		<Unit filename="system/freertos/include/list.h" />
+		<Unit filename="system/freertos/include/message_buffer.h" />
+		<Unit filename="system/freertos/include/mpu_prototypes.h" />
+		<Unit filename="system/freertos/include/mpu_wrappers.h" />
+		<Unit filename="system/freertos/include/portable.h" />
+		<Unit filename="system/freertos/include/portmacro.h" />
+		<Unit filename="system/freertos/include/projdefs.h" />
+		<Unit filename="system/freertos/include/queue.h" />
+		<Unit filename="system/freertos/include/semphr.h" />
+		<Unit filename="system/freertos/include/stack_macros.h" />
+		<Unit filename="system/freertos/include/stream_buffer.h" />
+		<Unit filename="system/freertos/include/task.h" />
+		<Unit filename="system/freertos/include/timers.h" />
+		<Unit filename="system/freertos/src/croutine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/src/event_groups.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/src/heap_1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/src/list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/src/port.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/src/queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/src/stream_buffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/src/tasks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/freertos/src/timers.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/matiec/accessor.h" />
+		<Unit filename="system/matiec/iec_std_FB.h" />
+		<Unit filename="system/matiec/iec_std_FB_no_ENENO.h" />
+		<Unit filename="system/matiec/iec_std_functions.h" />
+		<Unit filename="system/matiec/iec_std_lib.h" />
+		<Unit filename="system/matiec/iec_types.h" />
+		<Unit filename="system/matiec/iec_types_all.h" />
+		<Unit filename="system/stm32f1/include/cmsis/core_cm3.h" />
+		<Unit filename="system/stm32f1/include/cmsis/stm32f10x.h" />
+		<Unit filename="system/stm32f1/include/diag/Trace.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_adc.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_dac.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_dma.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_exti.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_flash.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_gpio.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_i2c.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_rcc.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_spi.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_tim.h" />
+		<Unit filename="system/stm32f1/include/stm32f1-stdperiph/stm32f10x_usart.h" />
+		<Unit filename="system/stm32f1/src/cmsis/system_stm32f10x.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/cmsis/vectors_stm32f10x.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/cortexm/_initialize_hardware.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/cortexm/_reset_hardware.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/cortexm/exception_handlers.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/diag/Trace.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/diag/trace_impl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/newlib/_cxx.cpp" />
+		<Unit filename="system/stm32f1/src/newlib/_exit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/newlib/_sbrk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/newlib/_startup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/newlib/_syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/newlib/_write.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/newlib/assert.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/misc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_adc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_dac.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_dma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_exti.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_flash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_gpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_i2c.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_rcc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_sdio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_spi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_tim.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/stm32f1/src/stm32f1-stdperiph/stm32f10x_usart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<debugger>
+				<search_path add="bin/Debug" />
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="127.0.0.1" ip_port="4242" additional_cmds="load&#x0A;tb main&#x0A;monitor jtag_reset" additional_cmds_before="shell xterm -e st-util &amp; disown&#x0A;set remotetimeout 60000" />
+				</remote_debugging>
+			</debugger>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
